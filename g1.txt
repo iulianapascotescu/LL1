@@ -1,0 +1,11 @@
+S A B C
+0 1 2 epsilon
+S
+S->A
+S->B C
+A->0 A 1
+A->B
+B->0 B 2
+B->epsilon
+C->2 C 1
+C->epsilon

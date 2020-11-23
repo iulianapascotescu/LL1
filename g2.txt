@@ -1,0 +1,207 @@
+program simpleType userType type parameter listOfParameters cmpdstmt stmtlist stmt simplstmt assignstmt iostmt readStmt writeStmt declarationStmt expression simpleExpression sumExpression subtractExpression divideExpression multiplyExpression moduloExpression structstmt ifstmt whilestmt condition RELATION Identifier constInteger constantString letter alphanumeric digit nonZeroDigit string placeholder constBoolean character
+function ( ) int bool char true false [ ] space { } ; ' = epsilon + - * / % if while else < <= > >= != == a b c d e f g h i j k l m n o p q r s t u v w x y z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 0 1 2 3 4 5 6 7 8 9 . , "
+program
+program->function Identifier ( listOfParameters ) cmpdstmt
+simpleType->bool
+simpleType->char
+simpleType->int
+userType->simpleType [ constInteger ]
+type->simpleType
+type->userType
+parameter->type space Identifier
+listOfParameters->epsilon
+listOfParameters->parameter
+listOfParameters->listOfParameters , parameter
+cmpdstmt->{ stmtlist }
+stmtlist->stmt
+stmtlist->stmt stmtlist
+stmt->simplstmt
+stmt->structstmt
+simplstmt->assignstmt
+simplstmt->iostmt
+simplstmt->declarationStmt
+assignstmt->Identifier = expression ;
+iostmt->readStmt
+iostmt->writeStmt
+readStmt->read ( Identifier ) ;
+writeStmt->write ( constantString ) ;
+writeStmt->write ( Identifier ) ;
+declarationStmt->parameter ;
+expression->simpleExpression
+expression->sumExpression
+expression->subtractExpression
+expression->divideExpression
+expression->multiplyExpression
+expression->moduloExpression
+simpleExpression->constInteger
+simpleExpression->constString
+simpleExpression->constBoolean
+simpleExpression->Identifier
+simpleExpression->Identifier [ constInteger ]
+simpleExpression->Identifier [ Identifier ]
+sumExpression->simpleExpression + simpleExpression
+subtractExpression->simpleExpression - simpleExpression
+divideExpression->simpleExpression / simpleExpression
+multiplyExpression->simpleExpression * simpleExpression
+moduloExpression->simpleExpression % simpleExpression
+structstmt->ifstmt
+structstmt->whilestmt
+ifstmt->if ( condition ) cmpdstmt
+ifstmt->if ( condition ) cmpdstmt else cmpdstmt
+whilestmt->while ( condition ) cmpdstmt
+condition->expression RELATION expression
+condition->constBoolean
+RELATION-><
+RELATION-><=
+RELATION->==
+RELATION->!=
+RELATION->>=
+RELATION->>
+Identifier->letter
+Identifier->letter alphanumeric
+alphanumeric->alphanumeric alphanumeric
+alphanumeric->a
+alphanumeric->b
+alphanumeric->c
+alphanumeric->d
+alphanumeric->e
+alphanumeric->f
+alphanumeric->g
+alphanumeric->h
+alphanumeric->i
+alphanumeric->j
+alphanumeric->k
+alphanumeric->l
+alphanumeric->m
+alphanumeric->n
+alphanumeric->o
+alphanumeric->p
+alphanumeric->q
+alphanumeric->r
+alphanumeric->s
+alphanumeric->t
+alphanumeric->u
+alphanumeric->v
+alphanumeric->w
+alphanumeric->x
+alphanumeric->y
+alphanumeric->z
+alphanumeric->A
+alphanumeric->B
+alphanumeric->C
+alphanumeric->D
+alphanumeric->E
+alphanumeric->F
+alphanumeric->G
+alphanumeric->H
+alphanumeric->I
+alphanumeric->J
+alphanumeric->K
+alphanumeric->L
+alphanumeric->M
+alphanumeric->N
+alphanumeric->O
+alphanumeric->P
+alphanumeric->Q
+alphanumeric->R
+alphanumeric->S
+alphanumeric->T
+alphanumeric->U
+alphanumeric->V
+alphanumeric->W
+alphanumeric->X
+alphanumeric->Y
+alphanumeric->0
+alphanumeric->1
+alphanumeric->2
+alphanumeric->3
+alphanumeric->4
+alphanumeric->5
+alphanumeric->6
+alphanumeric->7
+alphanumeric->8
+alphanumeric->9
+letter->a
+letter->b
+letter->c
+letter->d
+letter->e
+letter->f
+letter->g
+letter->h
+letter->i
+letter->j
+letter->k
+letter->l
+letter->m
+letter->n
+letter->o
+letter->p
+letter->q
+letter->r
+letter->s
+letter->t
+letter->u
+letter->v
+letter->w
+letter->x
+letter->y
+letter->z
+letter->A
+letter->B
+letter->C
+letter->D
+letter->E
+letter->F
+letter->G
+letter->H
+letter->I
+letter->J
+letter->K
+letter->L
+letter->M
+letter->N
+letter->O
+letter->P
+letter->Q
+letter->R
+letter->S
+letter->T
+letter->U
+letter->V
+letter->W
+letter->X
+letter->Y
+constInteger->0
+constInteger->+ nonZeroDigit
+constInteger->+ nonZeroDigit digit
+constInteger->- nonZeroDigit
+constInteger->- nonZeroDigit digit
+constInteger->nonZeroDigit
+constInteger->nonZeroDigit digit
+nonZeroDigit->1
+nonZeroDigit->2
+nonZeroDigit->3
+nonZeroDigit->4
+nonZeroDigit->5
+nonZeroDigit->6
+nonZeroDigit->7
+nonZeroDigit->8
+nonZeroDigit->9
+digit->0
+digit->nonZeroDigit
+digit->digit digit
+constantString->string
+string->" "
+string->" placeholders "
+placeholder->letter
+placeholder->digit
+placeholder->space
+placeholder->.
+placeholder->,
+placeholder->placeholder
+placeholders->placeholders placeholders
+placeholders->placeholder
+constantBoolean->true
+constantBoolean->false
+character->' placeholder '
