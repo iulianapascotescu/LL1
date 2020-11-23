@@ -40,7 +40,7 @@ public class Parser {
                     Set<String> fminus1 = new HashSet<>(this.first.get(p.getSecond().get(0)));
                     for (String c : p.getSecond()) {
                         if (this.first.get(c).size() == 0) {
-                            return;
+                            break;
                         }
                         fminus1.addAll(concatenationWithOne(fminus1, this.first.get(c)));
                     }
